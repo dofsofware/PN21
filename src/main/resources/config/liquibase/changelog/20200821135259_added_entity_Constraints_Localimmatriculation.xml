@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+    <!--
+        Added the constraints for entity DemandeService.
+    -->
+    <changeSet id="20200409112678-2" author="mara">
+        <!--        <addUniqueConstraint-->
+        <!--            columnNames="numero_comtpe,type_compte,agence_id,service_id"-->
+        <!--            constraintName="uk_numero_agence_provider"-->
+        <!--            tableName="compte"-->
+        <!--        />-->
+    </changeSet>
+</databaseChangeLog>

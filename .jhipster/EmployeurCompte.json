@@ -1,0 +1,74 @@
+{
+    "fluentMethods": true,
+    "clientRootFolder": "PortailCssIpresV2",
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "accountNumber",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "accountHolderName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "managerPhoneNumber",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "managerEmail",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "senderFirstName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "active",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "createdDate",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "signatairePhoneNumber",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "signataireEmail",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "numeroUnique",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "userId",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "managerFirstname",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "managerLastname",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "signataires",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "text"
+        }
+    ],
+    "changelogDate": "20211105153949",
+    "dto": "mapstruct",
+    "searchEngine": false,
+    "service": "serviceClass",
+    "entityTableName": "employeur_compte",
+    "databaseType": "sql",
+    "readOnly": false,
+    "jpaMetamodelFiltering": true,
+    "pagination": "pagination",
+    "microserviceName": "PortailCssIpresV2"
+}

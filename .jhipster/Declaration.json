@@ -1,0 +1,116 @@
+{
+    "fluentMethods": true,
+    "clientRootFolder": "PortailCssIpresV2",
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "uuid",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "typeIdentifiant",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "idIdentifiant",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "typeDeclaration",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "debutCotisation",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "finCotisation",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "address",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "processFlowId",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "raisonSociale",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "createAt",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "isUploaded",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "fileURL",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "numeroUnique",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "iPDIDTRAITEMENT",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "details",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "text"
+        },
+        {
+            "fieldName": "status",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "fileName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "isRead",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "ownerID",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "reponseBrute",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "text"
+        },
+        {
+            "fieldName": "codeAgenceCSS",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "codeAgenceIPRES",
+            "fieldType": "String"
+        },
+        {
+          "fieldName": "requeteBrute",
+          "fieldType": "byte[]",
+          "fieldTypeBlobContent": "text"
+        },
+        {
+          "fieldName": "nombreErreurs",
+          "fieldType": "Long"
+        }
+    ],
+    "changelogDate": "20201216125344",
+    "dto": "no",
+    "searchEngine": false,
+    "service": "no",
+    "entityTableName": "declaration",
+    "databaseType": "sql",
+    "readOnly": false,
+    "jpaMetamodelFiltering": false,
+    "pagination": "no",
+    "microserviceName": "PortailCssIpresV2"
+}

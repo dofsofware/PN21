@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Erreur Système</title>
+    <style>
+        /* Styles généraux */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 90%;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .header {
+            background-color: #ff5548;
+            color: white;
+            padding: 30px;
+            text-align: center;
+            border-radius: 8px 8px 0 0;
+        }
+        .content {
+            padding: 30px;
+            background-color: #ffffff;
+            border: 1px solid #e5e5e5;
+        }
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: #ff2a1a;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            margin: 20px 0;
+        }
+        .footer {
+            text-align: center;
+            padding: 20px;
+            color: white;
+            font-size: 14px;
+            background-color: #ff5548;
+            border-radius: 0 0 8px 8px;
+            margin-top: 0;
+        }
+        .signature {
+            margin: 20px 0;
+            padding: 15px;
+            background-color: #f9f9f9;
+            border-radius: 4px;
+        }
+        .signature p {
+            margin: 5px 0;
+        }
+        .logo {
+            margin: 20px auto;
+            max-width: 200px;
+            height: auto;
+            display: block;
+        }
+        .error-box {
+            background-color: #fff0f0;
+            border-left: 4px solid #ff5548;
+            padding: 15px;
+            margin: 20px 0;
+            font-family: monospace;
+            white-space: pre-wrap;
+            overflow-x: auto;
+        }
+        .error-code {
+            font-weight: bold;
+            color: #ff2a1a;
+        }
+        .error-date {
+            font-style: italic;
+            color: #666;
+        }
+        @media screen and (max-width: 480px) {
+            .container {
+                width: 100% !important;
+                padding: 10px !important;
+            }
+            .header {
+                padding: 20px !important;
+            }
+            .content {
+                padding: 20px !important;
+            }
+            .logo {
+                max-width: 150px !important;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <h1>Erreur Système</h1>
+    </div>
+    <div class="content">
+        <p>Bonjour,</p>
+        <p>Nous vous informons qu'une erreur système est survenue lors d'une opération ( ' <span th:text="${operation}"/> ' ) effectuée par l'utilisateur <span th:text="${userPrenom}"/> <span th:text="${userNom}"/>.</p>
+
+        <p>Détails de l'erreur :</p>
+        <ul>
+            <li><strong>Entreprise concernée :</strong> <span th:text="${raisonSocial}"/></li>
+            <li><strong>Code d'erreur :</strong> <span class="error-code" th:text="${errorCode}"/></li>
+            <li><strong>Date de l'erreur :</strong> <span class="error-date" th:text="${dateCatching}"/></li>
+            <li><strong>Numéro unique (Siège) :</strong> <span class="error-date" th:text="${numeroUnique}"/></li>
+        </ul>
+
+        <p>Message d'exception :</p>
+        <div class="error-box">
+            <strong>Message :</strong><span th:text="${exception}"/>
+            </br></br>
+            <strong>Stack Trace :</strong><span th:text="${StackTrace}"/>
+        </div>
+
+        <p>Veuillez prendre les mesures nécessaires pour résoudre ce problème.</p>
+
+    </div>
+    <div class="footer">
+        <img src="https://bo.secusociale.suntelecoms.com/assets/images/couple-logo.png" alt="Logo CSS/IPRES" class="logo">
+        <p>Cet email a été envoyé automatiquement, merci de ne pas y répondre directement.</p>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,85 @@
+{
+    "fluentMethods": true,
+    "clientRootFolder": "PortailCssIpresV2",
+    "relationships": [
+        {
+            "relationshipName": "agence",
+            "otherEntityName": "agence",
+            "relationshipType": "one-to-one",
+            "otherEntityField": "nom",
+            "ownerSide": true,
+            "useJPADerivedIdentifier": false,
+            "otherEntityRelationshipName": "configcompte"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "accountNumber",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "minlength"
+            ],
+            "fieldValidateRulesMinlength": "24"
+        },
+        {
+            "fieldName": "accountHolderName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "managerPhoneNumber",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "managerEmail",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "senderFirstName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "agenceCode",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "active",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "createdDate",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "signatairePhoneNumber",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "signataireEmail",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "managerFirstname",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "managerLastname",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "signataires",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "text"
+        }
+    ],
+    "changelogDate": "20211102173459",
+    "dto": "mapstruct",
+    "searchEngine": false,
+    "service": "serviceClass",
+    "entityTableName": "configcompte",
+    "databaseType": "sql",
+    "readOnly": false,
+    "jpaMetamodelFiltering": true,
+    "pagination": "pagination",
+    "microserviceName": "PortailCssIpresV2"
+}

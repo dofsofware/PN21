@@ -1,0 +1,81 @@
+{
+    "fluentMethods": true,
+    "clientRootFolder": "PortailCssIpresV2",
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "numeroFacture",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "typeFacture",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "dateEcheance",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "dateDebut",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "dateFin",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "raisonSociale",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "status",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "numeroUnique",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "detteinput",
+            "fieldType": "BigDecimal"
+        },
+        {
+            "fieldName": "montantVerse",
+            "fieldType": "BigDecimal"
+        },
+        {
+            "fieldName": "penalite",
+            "fieldType": "BigDecimal"
+        },
+        {
+            "fieldName": "montantPaye",
+            "fieldType": "BigDecimal"
+        },
+        {
+            "fieldName": "dette",
+            "fieldType": "BigDecimal"
+        },
+        {
+            "fieldName": "montantTotal",
+            "fieldType": "BigDecimal"
+        },
+        {
+            "fieldName": "majorations",
+            "fieldType": "BigDecimal"
+        },
+        {
+            "fieldName": "montantPrincipal",
+            "fieldType": "BigDecimal"
+        }
+    ],
+    "changelogDate": "20230102104428",
+    "dto": "mapstruct",
+    "searchEngine": false,
+    "service": "serviceClass",
+    "entityTableName": "facture_impayee",
+    "databaseType": "sql",
+    "readOnly": false,
+    "jpaMetamodelFiltering": true,
+    "pagination": "pagination",
+    "microserviceName": "PortailCssIpresV2"
+}

@@ -1,0 +1,35 @@
+{
+    "fluentMethods": true,
+    "clientRootFolder": "PortailCssIpresV2",
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "request",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "text"
+        },
+        {
+            "fieldName": "reponse",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "text"
+        },
+        {
+            "fieldName": "username",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "date",
+            "fieldType": "Instant"
+        }
+    ],
+    "changelogDate": "20210322164520",
+    "dto": "no",
+    "searchEngine": false,
+    "service": "no",
+    "entityTableName": "trace_infos",
+    "databaseType": "sql",
+    "readOnly": false,
+    "jpaMetamodelFiltering": false,
+    "pagination": "pagination",
+    "microserviceName": "PortailCssIpresV2"
+}

@@ -1,0 +1,145 @@
+{
+    "fluentMethods": true,
+    "clientRootFolder": "PortailCssIpresV2",
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "numeroFacture",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "unique"
+            ]
+        },
+        {
+            "fieldName": "idDeclaration",
+            "fieldType": "Long",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "numeroUnique",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "raisonSociale",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "adresse",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "agenceIpres",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "agenceCss",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "debutPeriode",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "finPeriode",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "dateReception",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "vieillesseRG",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "vieillesseRC",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "tauxRG",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "tauxRC",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "mtVieillesseRG",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "mtVieillesseRC",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "mtMajorationCss",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "prestationFam",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "tauxPrestationFam",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "mtPrestationFam",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "atmp",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "tauxATMP",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "mtAtmp",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "totalIpres",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "totalCss",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "totalAPayer",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "extraInfos",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "text"
+        },
+        {
+            "fieldName": "mtMajorationIpres",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "statut",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "echeance",
+            "fieldType": "Instant"
+        }
+    ],
+    "changelogDate": "20230117090037",
+    "dto": "mapstruct",
+    "searchEngine": false,
+    "service": "serviceClass",
+    "entityTableName": "facturedns",
+    "databaseType": "sql",
+    "readOnly": false,
+    "jpaMetamodelFiltering": true,
+    "pagination": "pagination",
+    "microserviceName": "PortailCssIpresV2"
+}

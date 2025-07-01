@@ -1,0 +1,107 @@
+{
+    "fluentMethods": true,
+    "clientRootFolder": "PortailCssIpresV2",
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "referencePaiment",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "facturesConcernees",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "text"
+        },
+        {
+            "fieldName": "montant",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "methodeDePaiement",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "date",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "statut",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "detailsPaiement",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "text"
+        },
+        {
+            "fieldName": "userId",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "personId",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "currency",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "paymentUrl",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "getStatusUrl",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "detailsRequete",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "text"
+        },
+        {
+            "fieldName": "terminalNumber",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "secretKey",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "bruteResponse",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "text"
+        },
+        {
+            "fieldName": "documents",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "text"
+        },
+        {
+            "fieldName": "signed",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "signedDocs",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "text"
+        },
+        {
+            "fieldName": "transactionId",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "timestamp",
+            "fieldType": "Long"
+        }
+    ],
+    "changelogDate": "20210107132737",
+    "dto": "no",
+    "searchEngine": false,
+    "service": "no",
+    "entityTableName": "apgpaiment",
+    "databaseType": "sql",
+    "readOnly": false,
+    "jpaMetamodelFiltering": false,
+    "pagination": "no",
+    "microserviceName": "PortailCssIpresV2"
+}

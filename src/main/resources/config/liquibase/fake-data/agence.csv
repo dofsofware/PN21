@@ -1,0 +1,39 @@
+id;code;nom;description;adresse;institution
+1;C_SG;Agence_CSS_Siège;TEL: 33;Css Siége;CSS
+2;C_WI;Agence_CSS_WILTORD;TEL: 33 889 19 80;Place de l'OIT Rond point Colobane BP 102 Dakar;CSS
+3;C_KA;Agence_CSS_KAOLACK;TEL: 33 941 13 13;Rue Cheick Ibra Fall BP 52 Kaolack;CSS
+4;C_LG;Agence_CSS_LOUGA;TEL: 33 967 10 54;Grand Louga Boulevard de la Gouvernance ;CSS
+5;C_SL;Agence_CSS_SAINT LOUIS;TEL: 33 961 14 35;Rue de France Nord BP 253 Saint Louis;CSS
+6;C_ZI;Agence_CSS_ZIGUINCHOR;TEL: 33 991 12 82;Rue de la Poste - Quartier Escale BP 70 Ziguinchor;CSS
+7;C_MB;Agence_CSS_MBOUR;TEL: 33 957 38 71;Quartier Escale BP 1416 Mbour;CSS
+8;C_PL;Agence_CSS_Plateau;TEL: 33 822 61 15;164, Rue Joseph Gomis BP 21830 Dakar;CSS
+9;C_GY;Agence_CSS_PIKINE GUEDIAWAYE;TEL: 33 837 03 01;Quartier Médina Gounass BP 19100 – Dakar;CSS
+10;C_TH;Agence_CSS_THIES;TEL: 33 951 12 64;Avenue Houphouet Boigny BP 145 Thies;CSS
+11;C_VD;Agence_CSS_VDN;TEL: 33 859 00 70;Bande Verte Cité Mourtada 2 Dakar;CSS
+12;C_DI;Agence_CSS_DIOURBEL;TEL: 33 971 17 58;Quartier Escale Lot n° 293 BP 47 Diourbel;CSS
+13;C_KO;Agence_CSS_KOLDA;TEL: 33 996 12 38;Quartier Escale BP 28 Kolda;CSS
+14;C_TB;Agence_CSS_TAMBACOUNDA;TEL: 33 981 11 29;Quartier Liberté BP 165 Tambacounda;CSS
+15;C_RT;Agence_CSS_RICHARD TOLL;TEL: 33 963 34 68;Quartier Escale BP 69 Richard Toll;CSS
+16;C_RF;Agence_CSS_RUFISQUE;TEL: 33 836 33 90;Keuri Kaw, Rue Adama Lô X Rue kaolack  BP 145 Rufisque - Dakar;CSS
+17;C_MA;Agence_CSS_MATAM;TEL: 33 966 22 86;Quartier Tantadji BP 147 Matam;CSS
+18;C_PT;Agence_CSS_Port;TEL: 33 823 83 01;20, Boulevard Djily MBAYE BP 4101 Dakar;CSS
+19;C_FA;Agence_CSS_FATICK;TEL: 33 XXX XX XX;Boulevard Macky Sall derrière la Gare Routière Fatick;CSS
+20;I_SG;Agence_IPRES_Siège;TEL: 33;Ipres Siége;IPRES
+21;I_KA;Agence_IPRES_KAOLACK;TEL: 33 938 43 00;Quartier Sara NDIOUGARY Kaolack;IPRES
+22;I_MA;Agence_IPRES_MATAM;TEL: 33 966 23 66;Quartier TANTADJI, immeuble Meissa THIAM Matam;IPRES
+23;I_PE;Agence_IPRES_Point E;TEL: 33 839 68 00;Rue Fatick X Rue Kaolack, Dakar;IPRES
+24;I_ZI;Agence_IPRES_ZIGUINCHOR;TEL: 33 938 12 12;Quartier Santhiaba, lot 543 en face poste de santé Ziguinchor;IPRES
+25;I_DI;Agence_IPRES_DIOURBEL;TEL: 33 939 01 70;Quartier Thierno KANDJI Diourbel;IPRES
+26;I_PK;Agence_IPRES_PIKINE;TEL: 33 879 12 33;Rue Dominique angle Tally Boumack Pikine;IPRES
+27;I_SL;Agence_IPRES_SAINT LOUIS;TEL: 33 961 17 17;Rue de France x Seydou Nourou TALL – Nord BP : 378 Saint-Louis;IPRES
+28;I_PL;Agence_IPRES_Plateau;TEL: 33 839 91 91;22, avenue Léopold Sedar Senghor ;IPRES
+29;I_TH;Agence_IPRES_THIES;TEL: 33 939 78 00;Quartier Escale Thies;IPRES
+30;I_KO;Agence_IPRES_KOLDA;TEL: 33 938 81 50;Quartier Sara Moussa N°119 Kolda;IPRES
+31;I_RT;Agence_IPRES_RICHARD TOLL;TEL: 33 963 32 75;Immeuble Socosti face Gendarmerie, porte EST Rte Nationale Richard Toll ;IPRES
+32;I_MB;Agence_IPRES_MBOUR;TEL: 33 939 72 12;Quartier Mbour Toucouleur BP : 866 Mbour RP;IPRES
+33;I_TB;Agence_IPRES_TAMBACOUNDA;TEL: 33 981 13 40 ;Quartier Liberté lot n° 67 BP 43 Tambacounda;IPRES
+34;I_LG;Agence_IPRES_LOUGA;TEL: 33 987 01 86;Avenue de la gare prés de la police  Louga;IPRES
+35;I_RF;Agence_IPRES_RUFISQUE;TEL: 33 879 20 01;Keuri Kaw, Rue Adama Lô X Rue kaolack Rufisque - Dakar;IPRES
+36;I_KG;Agence_IPRES_KEDOUGOU;TEL: 33 985 17 07;Quartier Dabala / Préfecture Kédougou;IPRES
+37;I_FA;Agence_IPRES_FATICK;TEL: 33 949 27 00;Boulevard Macky Sall derrière la Gare Routière Fatick;IPRES
+38;I_PO;Agence_IPRES_PODOR;TEL: 33 965 16 16;Quartier Amadou SY Lao DEMBA Podor;IPRES

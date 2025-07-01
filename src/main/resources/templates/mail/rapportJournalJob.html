@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rapport JournalJob sendInvoicesToPSRM</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+
+        .container {
+            max-width: 100%;
+            margin: 20px auto;
+            padding: 0;
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        /* Header amélioré */
+        .header {
+            background: linear-gradient(135deg, #ff5548 0%, #ff2a1a 100%);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+            position: relative;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="20" cy="20" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="80" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="40" cy="60" r="1" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .header h1 {
+            margin: 0 0 15px 0;
+            font-size: 2.2em;
+            font-weight: 700;
+            position: relative;
+            z-index: 1;
+        }
+
+        .header p {
+            margin: 0;
+            font-size: 1.1em;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Contenu principal */
+        .content {
+            padding: 40px 30px;
+            background-color: #ffffff;
+        }
+
+        /* Footer optimisé */
+        .footer {
+            text-align: center;
+            padding: 30px;
+            color: white;
+            font-size: 14px;
+            background: linear-gradient(135deg, #ff2a1a 0%, #ff5548 100%);
+            margin-top: 0;
+        }
+
+        .logo {
+            margin: 0 auto 20px auto;
+            max-width: 200px;
+            height: auto;
+            display: block;
+            border-radius: 8px;
+        }
+
+        .report-table {
+            width: 90%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            font-size: 15px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .report-table th {
+            background: linear-gradient(135deg, #ff2a1a 0%, #ff5548 100%);
+            color: white;
+            padding: 16px 12px;
+            text-align: center;
+            font-weight: 600;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .report-table td {
+            padding: 14px 12px;
+            text-align: center;
+            border-bottom: 1px solid #e9ecef;
+            font-size: 14px;
+            transition: background-color 0.2s ease;
+        }
+
+        .report-table tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+
+        .report-table tr:hover {
+            background-color: #e3f2fd;
+            transform: translateY(-1px);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Styles améliorés pour les résumés */
+        .summary-box {
+            background: linear-gradient(135deg, #fff5f5 0%, #fff0f0 100%);
+            border-left: 5px solid #ff5548;
+            padding: 25px;
+            margin: 25px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .summary-box h3 {
+            margin: 0 0 20px 0;
+            color: #ff2a1a;
+            font-size: 1.4em;
+            font-weight: 600;
+        }
+
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .summary-item {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #e9ecef;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .summary-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .summary-item .value {
+            font-size: 2.2em;
+            font-weight: 700;
+            color: #ff2a1a;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .summary-item .label {
+            font-size: 13px;
+            color: #6c757d;
+            margin-top: 5px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Styles améliorés pour les statuts */
+        .status-completed {
+            color: #28a745;
+            font-weight: 600;
+        }
+        .status-failed {
+            color: #ff2a1a;
+            font-weight: 600;
+        }
+        .status-canceled {
+            color: #fd7e14;
+            font-weight: 600;
+        }
+
+        /* Styles améliorés pour les modes d'exécution */
+        .mode-api {
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+            color: #1976d2;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .mode-automatic {
+            background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%);
+            color: #7b1fa2;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .mode-portail {
+            background: linear-gradient(135deg, #fff3e0 0%, #ffcc02 100%);
+            color: #f57c00;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .no-data {
+            text-align: center;
+            padding: 60px 20px;
+            color: #6c757d;
+            font-style: italic;
+        }
+
+        .no-data h3 {
+            color: #495057;
+            margin-bottom: 15px;
+        }
+
+        .date-info {
+            font-size: 15px;
+            color: #495057;
+            margin-bottom: 30px;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #6c757d;
+        }
+
+        .info-box {
+            margin-top: 30px;
+            padding: 20px;
+            background: linear-gradient(135deg, #e3f2fd 0%, #f0f8ff 100%);
+            border-radius: 8px;
+            border-left: 4px solid #2196f3;
+        }
+
+        /* Section titles */
+        .content h3 {
+            color: #495057;
+            font-size: 1.3em;
+            margin: 30px 0 20px 0;
+            font-weight: 600;
+        }
+
+        /* Responsive design amélioré */
+        @media screen and (max-width: 768px) {
+            .container {
+                margin: 10px;
+                border-radius: 8px;
+            }
+
+            .header {
+                padding: 30px 20px;
+            }
+
+            .header h1 {
+                font-size: 1.8em;
+            }
+
+            .content {
+                padding: 25px 20px;
+            }
+
+            .summary-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .summary-item {
+                padding: 15px;
+            }
+
+            .summary-item .value {
+                font-size: 1.8em;
+            }
+
+            .report-table {
+                font-size: 13px;
+            }
+            .report-table th,
+            .report-table td {
+                padding: 10px 6px;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .header h1 {
+                font-size: 1.5em;
+            }
+
+            .content {
+                padding: 20px 15px;
+            }
+
+            .summary-item .value {
+                font-size: 1.6em;
+            }
+
+            .report-table {
+                font-size: 12px;
+            }
+            .report-table th,
+            .report-table td {
+                padding: 8px 4px;
+            }
+
+            .logo {
+                max-width: 150px;
+            }
+        }
+
+        /* Optimisations pour les clients email */
+        @media screen and (min-width: 769px) {
+            .container {
+                width: 100% !important;
+                max-width: none !important;
+            }
+
+            .summary-grid {
+                grid-template-columns: repeat(4, 1fr) !important;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <h1>📊 Rapport Synchronisation</h1>
+        <p>Rapport automatique des 24 dernières heures</p>
+    </div>
+
+    <div class="content">
+        <div class="date-info">
+            <p>
+                <strong>Période du rapport :</strong>
+                <span th:text="${#temporals.format(generationDate24Avant, 'dd/MM/yyyy à HH:mm')}"></span>
+                -
+                <span th:text="${#temporals.format(generationDate, 'dd/MM/yyyy à HH:mm')}"></span>
+            </p>
+        </div>
+
+        <div th:if="${hasData}">
+            <!-- Résumé global -->
+            <div class="summary-box">
+                <h3>📈 Résumé Global</h3>
+                <div class="summary-grid">
+                    <div class="summary-item">
+                        <span class="value" th:text="${totalJobsGlobal}">0</span>
+                        <div class="label">Jobs Exécutés</div>
+                    </div>
+                    <div class="summary-item">
+                        <span class="value" th:text="${totalGlobal}">0</span>
+                        <div class="label">Déclaration Traitées</div>
+                    </div>
+                    <div class="summary-item">
+                        <span class="value status-completed" th:text="${validesGlobal}">0</span>
+                        <div class="label">Synchronisées</div>
+                    </div>
+                    <div class="summary-item">
+                        <span class="value status-failed" th:text="${erreursGlobal}">0</span>
+                        <div class="label">Non Synchronisées</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Résumé des statuts -->
+            <div class="summary-box">
+                <h3>📋 Statuts des Jobs</h3>
+                <div class="summary-grid">
+                    <div class="summary-item">
+                        <span class="value status-completed" th:text="${completedGlobal}">0</span>
+                        <div class="label">Jobs Terminés</div>
+                    </div>
+                    <div class="summary-item">
+                        <span class="value status-canceled" th:text="${canceledGlobal}">0</span>
+                        <div class="label">Jobs Annulés</div>
+                    </div>
+                    <div class="summary-item">
+                        <span class="value status-failed" th:text="${failedGlobal}">0</span>
+                        <div class="label">Jobs Échoués</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tableau détaillé par mode d'exécution -->
+            <h3>📊 Détails par Mode d'Exécution</h3>
+            <table class="report-table">
+                <thead>
+                <tr>
+                    <th>Mode d'Exécution</th>
+                    <th>Jobs Total</th>
+                    <th>Jobs Terminés</th>
+                    <th>Jobs Annulés</th>
+                    <th>Jobs Échoués</th>
+                    <th>Déclaration Traitées</th>
+                    <th>Synchronisées</th>
+                    <th>Non Synchronisées</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="data : ${reportData}">
+                    <td>
+                        <span th:class="${'mode-' + #strings.toLowerCase(data.modeExecution)}"
+                              th:text="${data.modeExecution}">API</span>
+                    </td>
+                    <td th:text="${data.totalJobs}">0</td>
+                    <td>
+                        <span class="status-completed" th:text="${data.completedJobs}">0</span>
+                    </td>
+                    <td>
+                        <span class="status-canceled" th:text="${data.canceledJobs}">0</span>
+                    </td>
+                    <td>
+                        <span class="status-failed" th:text="${data.failedJobs}">0</span>
+                    </td>
+                    <td th:text="${#numbers.formatInteger(data.totalSum, 0, 'COMMA')}">0</td>
+                    <td>
+                        <span class="status-completed" th:text="${#numbers.formatInteger(data.validesSum, 0, 'COMMA')}">0</span>
+                    </td>
+                    <td>
+                        <span class="status-failed" th:text="${#numbers.formatInteger(data.erreursSum, 0, 'COMMA')}">0</span>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div th:unless="${hasData}" class="no-data">
+            <h3>ℹ️ Aucune donnée disponible</h3>
+            <p>Aucun job "sendInvoicesToPSRM" n'a été trouvé dans les 24 dernières heures.</p>
+        </div>
+
+    </div>
+
+    <div class="footer">
+        <img src="https://bo.secusociale.suntelecoms.com/assets/images/couple-logo.png" alt="Logo CSS/IPRES" class="logo">
+        <p>Cet email a été envoyé automatiquement, merci de ne pas y répondre directement.</p>
+        <p>Rapport généré par le système de monitoring des jobs</p>
+    </div>
+</div>
+</body>
+</html>

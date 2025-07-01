@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:lang="${#locale.language}" lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indisponibilité du serveur (PSRM)</title>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
+    <link rel="shortcut icon" th:href="@{|${baseUrl}/favicon.ico|}"/>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .header {
+            background-color: #ff5548;
+            color: white;
+            padding: 30px;
+            text-align: center;
+            border-radius: 8px 8px 0 0;
+        }
+        .content {
+            padding: 30px;
+            background-color: #ffffff;
+            border: 1px solid #e5e5e5;
+        }
+        .alert-box {
+            margin: 20px 0;
+            padding: 15px;
+            background-color: #fff3f3;
+            border-radius: 4px;
+            border-left: 4px solid #ff5548;
+        }
+        .error-details {
+            margin: 20px 0;
+            padding: 15px;
+            background-color: #f9f9f9;
+            border-radius: 4px;
+            font-family: monospace;
+        }
+        .error-details p {
+            margin: 5px 0;
+        }
+        .footer {
+            text-align: center;
+            padding: 20px;
+            color: white;
+            font-size: 14px;
+            background-color: #ff5548;
+            border-radius: 0 0 8px 8px;
+            margin-top: 0;
+        }
+        .logo {
+            margin: 20px auto;
+            max-width: 200px;
+            height: auto;
+            display: block;
+        }
+        @media screen and (max-width: 480px) {
+            .container {
+                width: 100% !important;
+                padding: 10px !important;
+            }
+            .header {
+                padding: 20px !important;
+            }
+            .content {
+                padding: 20px !important;
+            }
+            .logo {
+                max-width: 150px !important;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <h1>⚠️ Alerte Système - PSRM Indisponible</h1>
+    </div>
+    <div class="content">
+        <p>Bonjour cher collaborateur,</p>
+
+        <div class="alert-box">
+            <h3>
+                Vous recevez ce message parce que le portail a détecté une indisponibilité de <b>PSRM</b>.
+            </h3>
+        </div>
+
+        <div class="error-details">
+            <p><strong>Date et heure :</strong> <span th:text="${#dates.format(#dates.createNow(), 'dd/MM/yyyy HH:mm:ss')}"></span></p>
+            <p><strong>wsdlLocation :</strong> <span th:text="${wsdlLocation}"></span></p>
+            <p><strong>Texte de l'exception :</strong> <span th:text="${exceptionText}"></span></p>
+        </div>
+
+        <p>
+            Cordialement,<br/>
+            Le Portail
+        </p>
+    </div>
+    <div class="footer">
+        <img src="https://bo.secusociale.suntelecoms.com/assets/images/couple-logo.png" alt="Logo CSS/IPRES" class="logo">
+        <p>Message système automatique - Priorité haute</p>
+    </div>
+</div>
+</body>
+</html>

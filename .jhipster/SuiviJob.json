@@ -1,0 +1,47 @@
+{
+    "fluentMethods": true,
+    "clientRootFolder": "PortailCssIpresV2",
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "nom",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "description",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "text"
+        },
+        {
+            "fieldName": "statut",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "demarreLe",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "termineLe",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "demarrePar",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "erreurs",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "text"
+        }
+    ],
+    "changelogDate": "20230119173034",
+    "dto": "mapstruct",
+    "searchEngine": false,
+    "service": "serviceClass",
+    "entityTableName": "suivi_job",
+    "databaseType": "sql",
+    "readOnly": false,
+    "jpaMetamodelFiltering": true,
+    "pagination": "pagination",
+    "microserviceName": "PortailCssIpresV2"
+}

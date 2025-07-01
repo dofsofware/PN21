@@ -1,0 +1,90 @@
+{
+    "fluentMethods": true,
+    "clientRootFolder": "PortailCssIpresV2",
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "typeIdentifiant",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "numeroIdentifiant",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "nineaFile",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "text"
+        },
+        {
+            "fieldName": "rcFile",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "text"
+        },
+        {
+            "fieldName": "status",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "moyenConfirmation",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "date",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "numeroRC",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "userId",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "numeroUnique",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "agenceCSS",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "agenceIPRES",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "agentId",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "dateTraitement",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "motifRejet",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "text"
+        },
+        {
+            "fieldName": "extraInfos",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "text"
+        },
+        {
+            "fieldName": "mandatFile",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "text"
+        }
+    ],
+    "changelogDate": "20200831134851",
+    "dto": "mapstruct",
+    "searchEngine": false,
+    "service": "serviceClass",
+    "entityTableName": "old_immatriculation",
+    "databaseType": "sql",
+    "readOnly": false,
+    "jpaMetamodelFiltering": true,
+    "pagination": "no",
+    "microserviceName": "PortailCssIpresV2"
+}

@@ -1,0 +1,82 @@
+{
+    "fluentMethods": true,
+    "clientRootFolder": "PortailCssIpresV2",
+    "relationships": [
+        {
+            "relationshipName": "salarie",
+            "otherEntityName": "salarie",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id",
+            "otherEntityRelationshipName": "carriere"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "numeroUniqueSalarie",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "numeroUniqueEmployeur",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "raisonSociale",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "typeRegime",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "typeDeclaration",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "debutCotisation",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "finCotisation",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "exercice",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "salaireBrute",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "salaireAssujettie",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "cotisationIpres",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "cotisationCss",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "extraInfos",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "text"
+        },
+        {
+            "fieldName": "createdAt",
+            "fieldType": "Instant"
+        }
+    ],
+    "changelogDate": "20220222154215",
+    "dto": "mapstruct",
+    "searchEngine": false,
+    "service": "serviceClass",
+    "entityTableName": "carriere",
+    "databaseType": "sql",
+    "readOnly": false,
+    "jpaMetamodelFiltering": true,
+    "pagination": "pagination",
+    "microserviceName": "PortailCssIpresV2"
+}

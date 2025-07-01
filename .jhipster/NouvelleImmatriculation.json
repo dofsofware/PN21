@@ -1,0 +1,121 @@
+{
+    "fluentMethods": true,
+    "clientRootFolder": "PortailCssIpresV2",
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "type",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "numdoc",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "statusdoc",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "statusdesc",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "payload",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "text"
+        },
+        {
+            "fieldName": "typeIdentifiant",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "ninea",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "numeroUnique",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "numeroCss",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "numeroIpres",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "user",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "isSubmit",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "createdAt",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "employerRegistrationFormId",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "employeeRegistrationFormId",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "zoneCss",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "text"
+        },
+        {
+            "fieldName": "sectorCss",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "text"
+        },
+        {
+            "fieldName": "zoneIpres",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "sectorIpres",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "text"
+        },
+        {
+            "fieldName": "agenceCss",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "agenceIpres",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "tauxAt",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "raisonSociale",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "text"
+        },
+        {
+            "fieldName": "registreCommerce",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20221102155458",
+    "dto": "mapstruct",
+    "searchEngine": false,
+    "service": "serviceClass",
+    "entityTableName": "nouvelle_immatriculation",
+    "databaseType": "sql",
+    "readOnly": false,
+    "jpaMetamodelFiltering": true,
+    "pagination": "pagination",
+    "microserviceName": "PortailCssIpresV2"
+}

@@ -1,0 +1,14 @@
+version: '2'
+services:
+  portailcssipresv2-app:
+    image: portailcssipresv2
+    environment:
+      - _JAVA_OPTIONS=-Xmx512m -Xms256m
+      - SPRING_PROFILES_ACTIVE=prod,swagger
+      - MANAGEMENT_METRICS_EXPORT_PROMETHEUS_ENABLED=true
+      - SPRING_DATASOURCE_URL=jdbc:mysql://portailcssipresv2-mysql:3306/portailcssipresv2?useUnicode=true&characterEncoding=utf8&useSSL=false&createDatabaseIfNotExist=true
+      - JHIPSTER_SLEEP=30 # gives time for other services to boot before the application
+  portailcssipresv2-mysql:
+    extends:
+      file: mysql.yml
+      service: portailcssipresv2-mysql

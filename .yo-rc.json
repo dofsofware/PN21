@@ -1,0 +1,41 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "com.secusociale.portail",
+      "nativeLanguage": "fr"
+    },
+    "jhipsterVersion": "6.7.1",
+    "applicationType": "microservice",
+    "baseName": "PortailCssIpresV2",
+    "packageName": "com.secusociale.portail",
+    "packageFolder": "com/secusociale/portail",
+    "serverPort": "8080",
+    "authenticationType": "jwt",
+    "cacheProvider": "ehcache",
+    "enableHibernateCache": true,
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "mysql",
+    "prodDatabaseType": "mysql",
+    "searchEngine": false,
+    "messageBroker": false,
+    "serviceDiscoveryType": false,
+    "buildTool": "maven",
+    "enableSwaggerCodegen": false,
+    "jwtSecretKey": "Y2Y4NjNhODE3YjU1M2FhMzQwYTA0ZTQwZjFiMWNmMDEwZjBmNTUzYWY1ZjJmZGJiYzQzM2I0MmZkZjZjNTBjYmY3YzRmZTFmNmE4YjVlYzU1NDRkOGVjODE1MDI3NWQ2OWUxZTdhN2Y1YjU2NTE3MGJiMjk2NDM1NjUxMjAwYjU=",
+    "embeddableLaunchScript": false,
+    "creationTimestamp": 1597764060822,
+    "testFrameworks": [],
+    "jhiPrefix": "jhi",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "otherModules": [],
+    "enableTranslation": true,
+    "clientPackageManager": "npm",
+    "nativeLanguage": "fr",
+    "languages": ["fr", "en"],
+    "blueprints": [],
+    "skipClient": true,
+    "skipUserManagement": true
+  }
+}

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:lang="${#locale.language}" lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activation compte</title>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
+    <link rel="shortcut icon" th:href="@{|${baseUrl}/favicon.ico|}"/>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .header {
+            background-color: #ff5548;
+            color: white;
+            padding: 30px;
+            text-align: center;
+            border-radius: 8px 8px 0 0;
+        }
+        .content {
+            padding: 30px;
+            background-color: #ffffff;
+            border: 1px solid #e5e5e5;
+        }
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: #ff2a1a;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            margin: 20px 0;
+        }
+        .credentials {
+            margin: 20px 0;
+            padding: 15px;
+            background-color: #f9f9f9;
+            border-radius: 4px;
+            border-left: 4px solid #ff5548;
+        }
+        .footer {
+            text-align: center;
+            padding: 20px;
+            color: white;
+            font-size: 14px;
+            background-color: #ff5548;
+            border-radius: 0 0 8px 8px;
+            margin-top: 0;
+        }
+        .signature {
+            margin: 20px 0;
+            padding: 15px;
+            background-color: #f9f9f9;
+            border-radius: 4px;
+        }
+        .signature p {
+            margin: 5px 0;
+        }
+        .logo {
+            margin: 20px auto;
+            max-width: 200px;
+            height: auto;
+            display: block;
+        }
+        @media screen and (max-width: 480px) {
+            .container {
+                width: 100% !important;
+                padding: 10px !important;
+            }
+            .header {
+                padding: 20px !important;
+            }
+            .content {
+                padding: 20px !important;
+            }
+            .logo {
+                max-width: 150px !important;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <h1>Activation de votre compte</h1>
+    </div>
+    <div class="content">
+        <p>
+            Bienvenue <span th:text="${user.firstName}"></span>
+            <span th:text="${user.lastName}"></span>
+        </p>
+
+        <p>Votre inscription a été bien prise en compte.</p>
+
+        <div class="credentials">
+            <p><strong>Vos identifiants de connexion :</strong></p>
+            <p>Identifiant : <span th:text="${user.login}"></span></p>
+            <p>Mot de passe : <span th:text="${temp_pass}"></span></p>
+        </div>
+
+        <p>Merci de cliquer sur le bouton ci-dessous pour activer votre compte :</p>
+
+        <p style="text-align: center;">
+            <a th:href="${frontUrl}" style="color:white!important;" class="btn">Activer mon compte</a>
+        </p>
+
+        <div class="signature">
+            <p>Téléphone: 33 889 19 89</p>
+            <p>E-mail: guichetunique@secusociale.sn</p>
+            <p>Cordialement,</p>
+            <p>Portail_CSS/IPRES</p>
+        </div>
+    </div>
+    <div class="footer">
+        <img src="https://bo.secusociale.suntelecoms.com/assets/images/couple-logo.png" alt="Logo CSS/IPRES" class="logo">
+        <p>Cet email a été envoyé automatiquement, merci de ne pas y répondre directement.</p>
+    </div>
+</div>
+</body>
+</html>

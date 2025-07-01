@@ -1,0 +1,55 @@
+{
+  "fluentMethods": true,
+  "clientRootFolder": "PortailCssIpresV2",
+  "relationships": [
+    {
+      "relationshipName": "immatriculation",
+      "otherEntityName": "immatriculation",
+      "relationshipType": "one-to-many",
+      "otherEntityRelationshipName": "localimmatriculation"
+    }
+  ],
+  "fields": [
+    {
+      "fieldName": "numdoc",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "statusdoc",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "payload",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "user",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "isSubmited",
+      "fieldType": "Boolean",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldName": "ninea",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required",
+        "unique"
+      ]
+    }
+  ],
+  "changelogDate": "20200821135259",
+  "dto": "no",
+  "searchEngine": false,
+  "service": "no",
+  "entityTableName": "localimmatriculation",
+  "databaseType": "sql",
+  "readOnly": false,
+  "jpaMetamodelFiltering": false,
+  "pagination": "pagination",
+  "microserviceName": "PortailCssIpresV2"
+}

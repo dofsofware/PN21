@@ -1,0 +1,143 @@
+{
+    "fluentMethods": true,
+    "clientRootFolder": "PortailCssIpresV2",
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "moyenConfirmation",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "status",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "statusdesc",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "payload",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "text"
+        },
+        {
+          "fieldName": "extrasInfo",
+          "fieldType": "byte[]",
+          "fieldTypeBlobContent": "text"
+        },
+        {
+            "fieldName": "typeIdentifiant",
+            "fieldType": "String"
+        },
+        {
+          "fieldName": "numeroIdentifiant",
+          "fieldType": "String"
+        },
+        {
+            "fieldName": "ninea",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "numeroUnique",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "numeroCss",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "numeroIpres",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "userId",
+            "fieldType": "Long"
+        },
+        {
+          "fieldName": "agentId",
+          "fieldType": "Long"
+        },
+        {
+            "fieldName": "createdAt",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "dateTraitement",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "date",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "zoneCss",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "text"
+        },
+        {
+            "fieldName": "sectorCss",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "text"
+        },
+        {
+            "fieldName": "zoneIpres",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "sectorIpres",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "text"
+        },
+        {
+            "fieldName": "agenceCss",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "agenceIpres",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "tauxAt",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "raisonSociale",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "text"
+        },
+        {
+          "fieldName": "mandatFile",
+          "fieldType": "byte[]",
+          "fieldTypeBlobContent": "text"
+        },
+        {
+          "fieldName": "motif",
+          "fieldType": "byte[]",
+          "fieldTypeBlobContent": "text"
+        },
+        {
+          "fieldName": "rcFile",
+          "fieldType": "byte[]",
+          "fieldTypeBlobContent": "text"
+        },
+        {
+          "fieldName": "nineaFile",
+          "fieldType": "byte[]",
+          "fieldTypeBlobContent": "text"
+        },
+        {
+            "fieldName": "registreCommerce",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20221102155458",
+    "dto": "mapstruct",
+    "searchEngine": false,
+    "service": "serviceClass",
+    "entityTableName": "immatriculation_recuperee",
+    "databaseType": "sql",
+    "readOnly": false,
+    "jpaMetamodelFiltering": true,
+    "pagination": "pagination",
+    "microserviceName": "PortailCssIpresV2"
+}

@@ -1,0 +1,6 @@
+id;code;expression;description
+1;carriereJob;0 0 0 20 * ?;../fake-data/blob/description.txt
+2;changeImmatriculationStatusJob;0 0 0 * * ?;../fake-data/blob/description.txt
+3;sendDeclarationJob;0 0 0 * * ?;../fake-data/blob/description.txt
+4;changeBase64ToUrlJob;0 0 * ? * *;../fake-data/blob/description.txt
+5;getLocalImmatriculationUniqueNumberJob;* */1 * * * ?;../fake-data/blob/description.txt

@@ -1,0 +1,177 @@
+<?xml version="1.0"?>
+<!-- root element wsdl:definitions defines set of related services -->
+<wsdl:definitions name="CM_PER_EXIST"
+  targetNamespace="http://ouaf.oracle.com/spl/XAIXapp/xaiserver/CM_PER_EXIST"
+  xmlns:xai="http://ouaf.oracle.com/spl/XAIXapp/xaiserver/CM_PER_EXIST"
+  xmlns:ns1="http://oracle.com/CM_PER_EXIST.xsd"
+  xmlns:ns2="http://oracle.com/CM_PER_EXIST.xsd"
+  xmlns:ouaf="http://ouaf.oracle.com/"
+  xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+  xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+
+  <!-- wsdl:types encapsulates schema definitions of communication types;
+       here using xsd -->
+  <wsdl:types>
+      <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ouaf="http://ouaf.oracle.com/" targetNamespace="http://ouaf.oracle.com/" elementFormDefault="unqualified">
+          <xsd:element name="Fault">
+            <xsd:complexType>
+                <xsd:all>
+                    <xsd:element name="ResponseStatus" type="xsd:string"/>
+                    <xsd:element name="ResponseCode" type="xsd:int"/>
+                    <xsd:element name="ResponseText" type="xsd:string"/>
+                    <xsd:element name="ResponseData" minOccurs="0">
+                        <xsd:complexType>
+                            <xsd:attribute name="parm1" type="xsd:string"/>
+                            <xsd:attribute name="parm2" type="xsd:string"/>
+                            <xsd:attribute name="parm3" type="xsd:string"/>
+                            <xsd:attribute name="parm4" type="xsd:string"/>
+                            <xsd:attribute name="parm5" type="xsd:string"/>
+                            <xsd:attribute name="parm6" type="xsd:string"/>
+                            <xsd:attribute name="parm7" type="xsd:string"/>
+                            <xsd:attribute name="parm8" type="xsd:string"/>
+                            <xsd:attribute name="parm9" type="xsd:string"/>
+                            <xsd:attribute name="text" type="xsd:string"/>
+                            <xsd:attribute name="category" type="xsd:string"/>
+                            <xsd:attribute name="numParm" type="xsd:int"/>
+                            <xsd:attribute name="number" type="xsd:int"/>
+                        </xsd:complexType>
+                    </xsd:element>
+                    <xsd:element name="ServerMessage" minOccurs="0">
+                        <xsd:complexType>
+                            <xsd:all>
+                                <xsd:element name="Category" type="xsd:string"/>
+                                <xsd:element name="Number" type="xsd:string"/>
+                                <xsd:element name="CallSequence" type="xsd:string"/>
+                                <xsd:element name="ProgramName" type="xsd:string"/>
+                                <xsd:element name="Text" type="xsd:string"/>
+                                <xsd:element name="Description" type="xsd:string"/>
+                                <xsd:element name="Table" type="xsd:string"/>
+                                <xsd:element name="Field" type="xsd:string"/>
+                            </xsd:all>
+                        </xsd:complexType>
+                    </xsd:element>
+                  </xsd:all>
+              </xsd:complexType>
+          </xsd:element>
+          <xsd:simpleType name="money">
+            <xsd:restriction base="xsd:decimal"/>
+          </xsd:simpleType>
+          <xsd:simpleType name="listAction">
+            <xsd:restriction base="xsd:token">
+              <xsd:enumeration value="delete"/>
+              <xsd:enumeration value="add"/>
+              <xsd:enumeration value="update"/>
+            </xsd:restriction>
+          </xsd:simpleType>
+      </xsd:schema>
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ouaf="http://ouaf.oracle.com/" targetNamespace="http://oracle.com/CM_PER_EXIST.xsd" elementFormDefault="qualified">
+  <xsd:import namespace="http://ouaf.oracle.com/"/>
+  <xsd:element name="CM_PER_EXIST">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="zone" minOccurs="0" default="CM_PER_EXIST">
+          <xsd:simpleType>
+            <xsd:restriction base="xsd:string">
+              <xsd:maxLength value="12"/>
+            </xsd:restriction>
+          </xsd:simpleType>
+        </xsd:element>
+        <xsd:element name="personId" minOccurs="0">
+          <xsd:simpleType>
+            <xsd:restriction base="xsd:string">
+              <xsd:maxLength value="4000"/>
+            </xsd:restriction>
+          </xsd:simpleType>
+        </xsd:element>
+        <xsd:element name="results" minOccurs="0" maxOccurs="unbounded">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="perExist" minOccurs="0">
+                <xsd:simpleType>
+                  <xsd:restriction base="xsd:string">
+                    <xsd:maxLength value="4000"/>
+                  </xsd:restriction>
+                </xsd:simpleType>
+              </xsd:element>
+            </xsd:sequence>
+            <xsd:attribute name="action" type="ouaf:listAction"/>
+          </xsd:complexType>
+        </xsd:element>
+      </xsd:sequence>
+      <xsd:attribute name="dateTimeTagFormat" type="xsd:string" fixed="xsd:strict" use="required"/>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>
+
+  </wsdl:types>
+
+  <!-- wsdl:message elements describe potential transactions -->
+
+  <!-- request CM_PER_EXISTRequest is of type CM_PER_EXIST -->
+  <wsdl:message name="CM_PER_EXISTRequest">
+    <wsdl:part name="body" element="ns1:CM_PER_EXIST"/>
+  </wsdl:message>
+
+  <!-- response CM_PER_EXISTResponse is of type CM_PER_EXISTResponse -->
+  <wsdl:message name="CM_PER_EXISTResponse">
+    <wsdl:part name="body" element="ns2:CM_PER_EXIST"/>
+  </wsdl:message>
+
+<!-- fault CM_PER_EXISTFault is of type CM_PER_EXISTFault -->
+  <wsdl:message name="CM_PER_EXISTFault">
+    <wsdl:part name="fault" element="ouaf:Fault"/>
+  </wsdl:message>
+
+  <!-- wsdl:portType describes messages in an operation -->
+  <wsdl:portType name="CM_PER_EXISTPortType">
+    <!-- the value of wsdl:operation eludes me -->
+    <wsdl:operation name="CM_PER_EXIST">
+      <wsdl:input message="xai:CM_PER_EXISTRequest"/>
+      <wsdl:output message="xai:CM_PER_EXISTResponse"/>
+      <wsdl:fault name="fault" message="xai:CM_PER_EXISTFault"/>
+    </wsdl:operation>
+  </wsdl:portType>
+
+  <!-- wsdl:binding states a serialization protocol for this service -->
+  <wsdl:binding name="CM_PER_EXISTSoapBinding"
+                type="xai:CM_PER_EXISTPortType">
+    <!-- leverage off soap:binding document style @@@(no wsdl:foo pointing at
+         the soap binding) -->
+    <soap:binding style="document"
+                  transport="http://schemas.xmlsoap.org/soap/http"/>
+
+    <!-- semi-opaque container of network transport details classed by
+         soap:binding above @@@ -->
+    <wsdl:operation name="CM_PER_EXIST">
+
+      <!-- again bind to SOAP? @@@ -->
+      <soap:operation soapAction="http://ouaf.oracle.com/spl/XAIXapp/xaiserver/CM_PER_EXIST"/>
+
+      <!-- furthur specify that the messages in the wsdl:operation
+           "CM_PER_EXIST" use SOAP? @@@ -->
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="fault">
+        <soap:fault name="fault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+
+  <!-- wsdl:service names a new service "CM_PER_EXISTService" -->
+  <wsdl:service name="CM_PER_EXISTService">
+    <wsdl:documentation>CM_PER_EXIST version 2: V&#233;rifie si la personne exist</wsdl:documentation>
+
+    <!-- connect it to the binding "CM_PER_EXISTSoapBinding" above -->
+    <wsdl:port name="CM_PER_EXISTPort"
+               binding="xai:CM_PER_EXISTSoapBinding">
+
+      <!-- give the binding a network address -->
+      <soap:address location="http://192.168.125.23:6500/ouaf/XAIApp/xaiserver/CM_PER_EXIST"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
