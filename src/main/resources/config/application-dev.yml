@@ -44,15 +44,6 @@ spring:
     url: jdbc:mysql://localhost:3306/cssipres_preprod?allowPublicKeyRetrieval=true&useUnicode=true&characterEncoding=UTF-8&useSSL=false&useLegacyDatetimeCode=false&serverTimezone=UTC&createDatabaseIfNotExist=true
     username: suntel
     password: suntel
-    ####################################################    PROD    #####################################################
-#    url: jdbc:mysql://192.168.125.112:3306/cssipresprod?allowPublicKeyRetrieval=true&useUnicode=true&characterEncoding=UTF-8&useSSL=false&useLegacyDatetimeCode=false&serverTimezone=UTC&createDatabaseIfNotExist=true
-#    username: cssipres
-#    password: Wu@hXqm8@]B!fjQy
-    ####################################################  PREPROD  #######################################################
-#    url: jdbc:mysql://192.168.125.112:3306/cssipresuat?allowPublicKeyRetrieval=true&useUnicode=true&characterEncoding=UTF-8&useSSL=false&useLegacyDatetimeCode=false&serverTimezone=UTC&createDatabaseIfNotExist=true
-#    username: cssipres
-#    password: Wu@hXqm8@]B!fjQy
-#    driver-class-name: com.mysql.cj.jdbc.Driver
     hikari:
       poolName: Hikari
       auto-commit: false
