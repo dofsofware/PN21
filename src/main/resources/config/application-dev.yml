@@ -54,6 +54,8 @@ spring:
   jpa:
     show-sql: false
     hibernate:
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
       ddl-auto: update
     properties:
       hibernate.id.new_generator_mappings: true

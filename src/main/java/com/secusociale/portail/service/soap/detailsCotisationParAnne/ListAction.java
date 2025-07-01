@@ -8,8 +8,8 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * <p>Classe Java pour listAction.
- * 
- * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
+ *
+ * <p>Le fragment de schema suivant indique le contenu attendu figurant dans cette classe.
  * <p>
  * <pre>
  * &lt;simpleType name="listAction">
@@ -20,7 +20,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/restriction>
  * &lt;/simpleType>
  * </pre>
- * 
+ *
  */
 @XmlType(name = "listAction", namespace = "http://ouaf.oracle.com/")
 @XmlEnum
